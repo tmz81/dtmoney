@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="./src/assets/logo.svg" alt="logo dtmoney" width="220px">
+  <img src="./src/assets/logo.svg" alt="logo dtmoney" width="120px">
 </h1>
 
 </br>
@@ -15,13 +15,9 @@
 
 </div>
 
-</br>
-
 ## 📚 About
 
 DT Money is a personal financial account control that registers incoming and outgoing accounts, totals in cards using a Fake API MirajeJS library that uses the JSON format to make the entries. 
-
-</br>
 
 
 ## 🚀 Technology
@@ -33,7 +29,6 @@ DT Money is a personal financial account control that registers incoming and out
 - [Axios](https://www.npmjs.com/package/axios)
 - [Styled-Component](https://www.npmjs.com/package/styled-components)
 
-</br>
 
 ## 🏃‍♂️ Run Project
 
