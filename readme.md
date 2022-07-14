@@ -19,7 +19,6 @@
 
 DT Money is a personal financial account control that registers incoming and outgoing accounts, totals in cards using a Fake API MirajeJS library that uses the JSON format to make the entries. 
 
-
 ## 🚀 Technology
 
 - [Vite](https://vitejs.dev/guide/)
@@ -29,6 +28,9 @@ DT Money is a personal financial account control that registers incoming and out
 - [Axios](https://www.npmjs.com/package/axios)
 - [Styled-Component](https://www.npmjs.com/package/styled-components)
 
+## 🎨 Layout
+
+Você pode visualizar o layout do projeto através desse [link](https://www.figma.com/file/0xmu9mj2TJYoIOubBFWsk5/dtmoney-Ignite-(Copy)?node-id=35212%3A1245). É necessário ter conta no [Figma](https://www.figma.com) para acessá-lo.
 
 ## 🏃‍♂️ Run Project
 
