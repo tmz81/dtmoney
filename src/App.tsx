@@ -1,6 +1,6 @@
-import { Dashboard } from "./components/dashboard"
-import { Header } from "./components/header"
 import { Global } from "./styles/global"
+import { Header } from "./components/header"
+import { Dashboard } from "./components/dashboard"
 
 function App() {
   return (
