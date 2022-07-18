@@ -7,8 +7,6 @@ export function Dashboard() {
     <Container>
       <Summary />
       <Transaction />
-      <Transaction />
-      <Transaction />
     </Container>
   )
 }

@@ -1,4 +1,4 @@
-import { Container, } from './style';
+import { Container } from './style';
 import iconInput from '../../assets/entradas.svg';
 import iconOutput from '../../assets/saidas.svg';
 import iconTotal from '../../assets/total.svg';
@@ -27,7 +27,6 @@ export function Summary() {
         </header>
         <strong>R$1000,00</strong>
       </div>
-      
     </Container>
   )
 }

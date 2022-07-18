@@ -1,4 +1,3 @@
-import { Content } from './../header/style';
 import styled from "styled-components";
 
 export const Container = styled.div`
