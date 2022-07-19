@@ -1,12 +1,12 @@
 import { useEffect } from "react";
+import { api } from "../../services/api";
 import { Container } from "./style";
 
 export function Transaction() {
   useEffect(() => {
-    fetch('http://localhost:5173/api/transactions') // buscar dados na api fake
-      .then(response => response.json()) // transforma em json
-      .then(data => console.log(data)) // exibida no console
-  }, [ /* Deixando esse parametrô vazio, o useEffect só roda uma única vez */])
+    api.get('/transactions')
+      .then(response => console.log(response.data))
+  }, [])
 
   return (
     <Container>
