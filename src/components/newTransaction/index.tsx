@@ -35,6 +35,7 @@ export function NewTransaction({ isOpen, onRequestClose } : NewTransactionProps)
               type="button"
               onClick={() => {setType('deposit');}}
               isActive={type === 'deposit'}
+              ActiveColor="green"
             >
               <img src={imgInput} alt="Entrada" />
               <span>Entrada</span>
@@ -42,7 +43,8 @@ export function NewTransaction({ isOpen, onRequestClose } : NewTransactionProps)
             <BoxButtons 
               type="button"
               onClick={() => {setType('withdraw');}}
-              isActive={type === 'withdraw'}  
+              isActive={type === 'withdraw'} 
+              ActiveColor="red" 
             >
               <img src={imgOutput} alt="Saida" />
               <span>Saída</span>

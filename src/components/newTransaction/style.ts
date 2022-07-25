@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { darken } from "polished";
+import { darken, transparentize } from "polished";
 
 export const Container = styled.form`
   h2 {
@@ -62,14 +62,20 @@ export const TransactionTypeContainer = styled.div`
 
 interface BoxButtonsProps {
   isActive: boolean;
-}
+  ActiveColor: 'green' | 'red';
+};
+
+const colors = {
+  green: '#33CC95',
+  red: '#e52e4d'
+};
 
 export const BoxButtons = styled.button<BoxButtonsProps>`
   height: 4rem;
     border: 1px solid #d7d7d7;
     border-radius: 0.50rem;
 
-    background: ${(props) => props.isActive ? '#000' : 'transparent'};
+    background: ${(props) => props.isActive ? transparentize(0.9, colors[props.ActiveColor]) : 'transparent'};
 
     display: flex;
     align-items: center;
