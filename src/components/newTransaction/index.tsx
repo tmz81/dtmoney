@@ -4,6 +4,7 @@ import imgOutput from "../../assets/saidas.svg";
 import imgCloseModal from "../../assets/fechar.svg"
 import { FormEvent, useState } from "react";
 import { Container, TransactionTypeContainer, BoxButtons } from "./style";
+import { api } from "../../services/api";
 
 interface NewTransactionProps {
   isOpen: boolean;
@@ -19,12 +20,14 @@ export function NewTransaction({ isOpen, onRequestClose } : NewTransactionProps)
   function handleCreateNewTransaction(event: FormEvent) {
     event.preventDefault();
 
-    console.log({
+    const data = {
       title,
       value,
       category,
       type
-    });
+    };
+
+    api.post('/transactions', data)
     
   }
 
