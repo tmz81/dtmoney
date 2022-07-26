@@ -2,17 +2,17 @@ import { Container } from "./style";
 import { useContext } from "react";
 import { TransactionsContext } from "../../context/TransactionsContext";
 
-export function Transaction() {
-  const transactions = useContext(TransactionsContext);
+export function TransactionsTable() {
+  const {transactions} = useContext(TransactionsContext);
 
   return (
     <Container>
       <table>
         <thead>
           <tr>
-            <th>Title</th>
-            <th>Value</th>
-            <th>Category</th>
+            <th>Nome</th>
+            <th>Valor</th>
+            <th>Categoria</th>
             <th>Data</th>
           </tr>
         </thead>
