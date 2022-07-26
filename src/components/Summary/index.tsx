@@ -3,7 +3,7 @@ import iconInput from '../../assets/entradas.svg';
 import iconOutput from '../../assets/saidas.svg';
 import { Container } from './style';
 import { useContext } from 'react';
-import { TransactionsContext } from '../../hooks/TransactionsContext';
+import { TransactionsContext } from '../../context/TransactionsContext';
 
 export function Summary() {
   const transactions = useContext(TransactionsContext);
