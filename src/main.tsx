@@ -13,11 +13,19 @@ createServer({
       transactions: [
         {
           id: 1,
-          title: "Free Lancer",
+          title: "Freelancer website",
           type: "deposit",
-          category: "dev",
+          category: "Trabalho",
           amount: 6000,
           createdAt: new Date('2022-07-26 09:25:42')
+        },
+        {
+          id: 2,
+          title: "Alugel",
+          type: "widthdraw",
+          category: "Moradia",
+          amount: 1400,
+          createdAt: new Date('2022-07-10 09:25:42')
         }
       ] 
     })
