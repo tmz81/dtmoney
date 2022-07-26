@@ -4,6 +4,7 @@ import { Dashboard } from "./components/Dashboard"
 import { NewTransaction } from "./components/NewTransaction"
 import { useState } from "react";
 import Modal from "react-modal";
+import { TransactionsContext } from "./hooks/TransactionsContext";
 
 Modal.setAppElement('#root');
 
@@ -18,7 +19,7 @@ function App() {
     setIsNewTransactionModalOpen(false)
   }
   return (
-    <>
+    <TransactionsContext.Provider value={[]}>
       <Header handlerOpenModal={handlerOpenNewTransactionModal}/>
       <Dashboard />
       <NewTransaction 
@@ -26,7 +27,7 @@ function App() {
         onRequestClose={handlerCloseNewTransactionModal} 
       />
       <Global />
-    </>
+    </TransactionsContext.Provider>
   )
 }
 
