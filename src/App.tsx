@@ -1,7 +1,7 @@
 import { Global } from "./styles/global"
-import { Header } from "./components/header"
-import { Dashboard } from "./components/dashboard"
-import { NewTransaction } from "./components/newTransaction"
+import { Header } from "./components/Header"
+import { Dashboard } from "./components/Dashboard"
+import { NewTransaction } from "./components/NewTransaction"
 import { useState } from "react";
 import Modal from "react-modal";
 
