@@ -33,6 +33,11 @@ export const Container = styled.div`
       &.widthdraw {
         color: var(--red);;
       }
+
+      .trash-icon {
+        color: var(--red);
+        cursor: pointer;
+      }
     }
    }
 `;

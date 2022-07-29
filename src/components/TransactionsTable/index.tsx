@@ -1,9 +1,11 @@
 import { Container } from "./style";
 import { useContext } from "react";
 import { TransactionsContext } from "../../context/TransactionsContext";
+import { BiTrash } from "react-icons/bi";
 
 export function TransactionsTable() {
   const {transactions} = useContext(TransactionsContext);
+  const { deleteTransaction } = useContext(TransactionsContext);
 
   return (
     <Container>
@@ -30,6 +32,12 @@ export function TransactionsTable() {
               <td>{transaction.category}</td>
               <td>
                 {new Intl.DateTimeFormat('pt-BR').format(new Date(transaction.createdAt))}
+              </td>
+              <td>
+                <BiTrash 
+                  className="trash-icon"
+                  onClick={() => deleteTransaction(transaction.id)}  
+                />
               </td>
             </tr>
           ))}
