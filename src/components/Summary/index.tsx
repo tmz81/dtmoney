@@ -7,14 +7,6 @@ import { TransactionsContext } from '../../context/TransactionsContext';
 
 export function Summary() {
   const {transactions} = useContext(TransactionsContext);
-  
-  // const totalDeposits = transactions.reduce((acc, transaction) => {
-  //   if(transaction.type === 'deposit') {
-  //     return acc + transaction.amount;
-  //   }
-
-  //   return acc
-  // }, 0)
 
   const summary = transactions.reduce((acc, transaction) => {
     if(transaction.type === 'deposit') {
