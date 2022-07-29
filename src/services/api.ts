@@ -2,7 +2,7 @@ import axios from 'axios';
 import { createServer, Model } from 'miragejs';
 
 export const api = axios.create({
-  baseURL: 'https://dtmoney-tmz81.vercel.app/api',
+  baseURL: 'https://dtmoney-beta-six.vercel.app/api',
 });
 
 export function createFakeAPI() {
