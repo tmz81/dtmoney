@@ -5,6 +5,7 @@ import imgCloseModal from "../../assets/fechar.svg";
 import { FormEvent, useState, useContext } from "react";
 import { Container, TransactionTypeContainer, BoxButtons } from "./style";
 import { TransactionsContext } from "../../context/TransactionsContext";
+import { Button, Grid, InputAdornment, TextField } from "@mui/material";
 
 interface NewTransactionModalProps {
   isOpen: boolean;
@@ -24,35 +25,33 @@ export function NewTransactionModal({
     type: { value: "", erro: false },
   });
 
-  // const [title, setTitle] = useState('');
-  // const [amount, setAmount] = useState(0);
-  // const [category, setCategory] = useState('');
-  const [type, setType] = useState('deposit');
+  const [amount, setAmount] = useState("");
+  const [category, setCategory] = useState("");
+  const [type, setType] = useState("deposit");
 
-  // async function handleCreateNewTransaction(event: FormEvent) {
-  //   event.preventDefault();
+  async function handleCreateNewTransaction(event: FormEvent) {
+    event.preventDefault();
 
-  //   await createTransaction({
-  //     title,
-  //     amount,
-  //     category,
-  //     type,
-  //   });
+    await createTransaction({
+      title: {value: "", erro: false},
+      amount,
+      category,
+      type,
+    });
 
-  //   setState({
-  //     title: { value: "", erro: false },
-  //     amount: { value: "", erro: false },
-  //     category: { value: "", erro: false },
-  //     type: { value: "deposit", erro: false },
-  //   });
+    setState({
+      title: { value: "", erro: false },
+      amount: { value: "", erro: false },
+      category: { value: "", erro: false },
+      type: { value: "deposit", erro: false },
+    });
 
-  //   // setTitle("");
-  //   // setAmount(0);
-  //   // setCategory("");
-  //   setType("deposit");
+    // setAmount('');
+    // setCategory("");
+    // setType("deposit");
 
-  //   onRequestClose();
-  // }
+    onRequestClose();
+  }
 
   return (
     <Modal
@@ -72,28 +71,62 @@ export function NewTransactionModal({
       <Container>
         <h2>Cadastrar Nova Transação</h2>
 
-        <input
-          placeholder="Nome"
-          value={state.title.value}
-          onChange={(e) =>
-            setState((state) => ({
-              ...state,
-              title: { value: e.target.value, erro: false },
-            }))
-          }
-        />
+        <Grid container spacing={2}>
+          <Grid item xs={6} sm={6} md={6} lg={6} xl={6}>
+            <TextField
+              fullWidth
+              required
+              label="Descrição"
+              variant="outlined"
+              value={state.title.value}
+              error={state.title.erro}
+              onChange={(e) =>
+                setState((state) => ({
+                  ...state,
+                  title: { value: e.target.value, erro: false },
+                }))
+              }
+              onBlur={(e) => {
+                if (state.title.value === "") {
+                  setState((state) => ({
+                    ...state,
+                    title: { value: e.target.value, erro: true },
+                  }));
+                }
+              }}
+            />
+          </Grid>
 
-        <input
-          type="number"
-          value={state.amount.value}
-          placeholder="Preço"
-          onChange={(e) =>
-            setState((state) => ({
-              ...state,
-              amount: { value: e.target.value, erro: false },
-            }))
-          }
-        />
+          <Grid item xs={6} sm={6} md={6} lg={6} xl={6}>
+            <TextField
+              fullWidth
+              required
+              label="Valor"
+              variant="outlined"
+              value={state.amount.value}
+              error={state.amount.erro}
+              onChange={(e) =>
+                setState((state) => ({
+                  ...state,
+                  amount: { value: e.target.value, erro: false },
+                }))
+              }
+              onBlur={(e) => {
+                if (state.amount.value === "") {
+                  setState((state) => ({
+                    ...state,
+                    amount: { value: e.target.value, erro: true },
+                  }));
+                }
+              }}
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">R$</InputAdornment>
+                ),
+              }}
+            />
+          </Grid>
+        </Grid>
 
         <TransactionTypeContainer>
           <BoxButtons

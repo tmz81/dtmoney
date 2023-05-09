@@ -3,8 +3,8 @@ import { createContext, ReactNode, useEffect, useState } from "react";
 
 interface Transaction {
   id: number;
-  title: string;
-  amount: number;
+  title: {value: string, erro: false};
+  amount: string;
   type: string;
   category: string;
   createdAt: string;
