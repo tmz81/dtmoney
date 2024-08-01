@@ -28,6 +28,17 @@ export const Container = styled.form`
     & + input {
       margin-top: 1rem;
     }
+
+    &[type="number"]::-webkit-outer-spin-button,
+    &[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    &[type="number"] {
+      -moz-appearance: textfield;
+    }
+  }
   }
 
   button[type="submit"] {
